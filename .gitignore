@@ -45,3 +45,6 @@ Thumbs.db
 
 # Ignore all files in the venv directory
 unis_hydrography/
+
+#ignore .txt files
+*.txt
