@@ -1,0 +1,47 @@
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.venv/
+ENV/
+env/
+.env
+
+# Jupyter Notebook checkpoint files
+.ipynb_checkpoints/
+
+# Pytest cache
+.pytest_cache/
+
+# Logs
+*.log
+
+# Distribution / packaging
+.dist/
+build/
+dist/
+*.egg-info/
+
+# IDEs and editors
+.idea/
+.vscode/
+*.suo
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore NetCDF files
+*.nc
+
+# Ignore Zip files
+*.zip
+
+# Ignore all files in the venv directory
+unis_hydrography/
