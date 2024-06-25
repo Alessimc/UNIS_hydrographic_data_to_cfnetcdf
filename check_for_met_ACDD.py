@@ -33,7 +33,7 @@ required_attributes = {
 
 def missing_MET_ACDD_attributes(file_path):
     file_path = Path(file_path)
-    # Open the NetCDF file using xarray
+    # Open NetCDF 
     with xr.open_dataset(file_path) as ds:
         # Get the global attributes
         global_attrs = ds.attrs
