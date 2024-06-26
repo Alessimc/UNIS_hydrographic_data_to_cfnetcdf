@@ -15,4 +15,4 @@ MET ACDD Requirements are checked using
 
 Notebooks are messy and only used for testing and exploratory analysis.
 
-unzip.py is a helper file that unzips data and alocates it to a specified directory.
+unzip.py is a helper file that unzips data and allocates it to a specified directory.
