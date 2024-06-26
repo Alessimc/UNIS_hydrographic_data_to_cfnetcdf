@@ -7,11 +7,11 @@ The dataset hosted at https://data.npolar.no/dataset/39d9f0f9-af12-420c-a879-109
 The resulting data will be made available through ADC at MET as a cached dataset to serve the needs of BlueCloud.
 
 Scripts used for data transformation are:
-generate_cfnetcdf_child_files.py
-generate_cfnetcdf_parent_file.py
+- generate_cfnetcdf_child_files.py
+- generate_cfnetcdf_parent_file.py
 
 MET ACDD Requirements are checked using
-check_for_met_ACDD.py
+- check_for_met_ACDD.py
 
 Notebooks are messy and only used for testing and exploratory analysis.
 unzip.py is a helper file that unzips data and alocates it to a specified directory.
