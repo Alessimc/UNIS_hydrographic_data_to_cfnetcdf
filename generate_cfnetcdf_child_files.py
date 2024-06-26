@@ -46,6 +46,7 @@ for subdir in subdirs:
         # xrds.attrs['publisher_url'] = # not required since hosted by MET?
         xrds.attrs['history'] = f'MET ACDD attributes were added at {iso_format_time} by Alessio Canclini.'
         xrds.attrs['project'] = 'A collection of projects have contributed to this hydrographic database. See references.'
+        xrds.attrs['featureType'] = 'profile'
 
         # remove comment attrs if empty
         xrds.attrs.pop('comment', None)
