@@ -1,6 +1,7 @@
 from pathlib import Path
 import xarray as xr
 import numpy as np
+import netCDF4 as nc
 from datetime import datetime, timezone
 
 # Get the current UTC date and time
@@ -83,5 +84,13 @@ xrds.attrs.pop('comment', None)
 # Save the modified dataset to a new NetCDF file
 print(xrds)
 xrds.to_netcdf(out_file)
+
+with nc.Dataset(out_file, 'r+') as ds:
+    # Rename the dimension 'CALIBRATION' to 'CALIBRATION_COEFFICIENT'
+    if 'CALIBRATION' in ds.dimensions:
+        ds.renameDimension('CALIBRATION', 'CALIBRATION_COEFFICIENT')
+    else:
+        print("Dimension 'CALIBRATION' not found.")
 print(f'{out_file.name} succesfully saved to {out_file.parent}.')
 
+print(ds)
