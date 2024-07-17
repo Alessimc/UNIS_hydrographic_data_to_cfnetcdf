@@ -25,6 +25,10 @@ def fix_coordinates(file_path):
                 else:
                     var.setncattr('coordinates', 'CAST')
 
+    # Update the global attribute creator_url
+    # new_creator_url = 'https://orcid.org/0000-0003-0210-4981; https://orcid.org/0000-0002-4646-9969; https://orcid.org/0000-0002-3331-5581; https://orcid.org/0000-0003-0900-5679; https://orcid.org/0000-0002-3068-1754; https://tinyurl.com/4y3w8fvj; https://www.scopus.com/authid/detail.uri?authorId=7201789296; https://orcid.org/0000-0001-5636-2092; https://orcid.org/0000-0002-6386-2471; https://orcid.org/0000-0002-6566-4292'
+    # dataset.setncattr('creator_url', new_creator_url)
+
     # Close the dataset
     dataset.close()
 

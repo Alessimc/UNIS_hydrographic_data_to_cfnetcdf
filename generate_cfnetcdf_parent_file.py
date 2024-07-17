@@ -65,7 +65,7 @@ xrds['TIME'].attrs = {'long_name': 'time',
 #   "Ragnheid Skogseth; PÃ¥l Gunnar Ellingsen; JÃ¸rgen Bergen; Finlo Cottier; Stig Falk-Petersen, Boris Ivanov, Frank Nilsen, Janne SÃ¸reide, Anna Vader"
 # TODO: change spellling to correct norwegian lettering, see if it looks ok with ncdump.
 
-# TODO: missing email and url for Borins Ivanov
+# TODO: missing url for Borins Ivanov
 
 # correcting spelling 
 xrds.attrs['contributor_name'] = 'Ragnheid Skogseth; Pål Gunnar Ellingsen; Jørgen Berge; Finlo Cottier; Stig Falk-Petersen, Boris Ivanov, Frank Nilsen, Janne Søreide, Anna Vader'
@@ -76,7 +76,7 @@ xrds.attrs['creator_type'] = 'person'
 xrds.attrs['creator_institution'] = 'UNIS; NPI; UNIS; UNIS, UiT; SAMS, UiT; Akvaplan-niva, UiT; AARI, SPBU; UNIS, UiB; UNIS; UNIS;'
 xrds.attrs['creator_name'] = 'Ragnheid Skogseth; Mathias Bockwoldt; Pål Gunnar Ellingsen; Jørgen Berge; Finlo Cottier; Stig Falk-Petersen, Boris Ivanov, Frank Nilsen, Janne Søreide, Anna Vader'
 xrds.attrs['creator_email'] = 'Ragnheid.Skogseth@unis.no; mathias.bockwoldt@npolar.no; pal.g.ellingsen@uit.no; jorgen.berge@uit.no; finlo.r.cottier@uit.no;  sfp@akvaplan.niva.no; b.ivanov@spbu.ru; frank.nilsen@unis.no; janne.soreide@unis.no; anna.vader@unis.no'
-xrds.attrs['creator_url'] = 'https://orcid.org/0000-0003-0210-4981; https://orcid.org/0000-0002-4646-9969; https://orcid.org/0000-0002-3331-5581; https://orcid.org/0000-0003-0900-5679; https://orcid.org/0000-0002-3068-1754; https://tinyurl.com/4y3w8fvj; ; https://orcid.org/0000-0001-5636-2092; https://orcid.org/0000-0002-6386-2471; https://orcid.org/0000-0002-6566-4292'
+xrds.attrs['creator_url'] = 'https://orcid.org/0000-0003-0210-4981; https://orcid.org/0000-0002-4646-9969; https://orcid.org/0000-0002-3331-5581; https://orcid.org/0000-0003-0900-5679; https://orcid.org/0000-0002-3068-1754; https://tinyurl.com/4y3w8fvj; https://www.scopus.com/authid/detail.uri?authorId=7201789296; https://orcid.org/0000-0001-5636-2092; https://orcid.org/0000-0002-6386-2471; https://orcid.org/0000-0002-6566-4292'
 # xrds.attrs['publisher_name'] = # not required since hosted by MET?
 # xrds.attrs['publisher_email'] = # not required since hosted by MET?
 # xrds.attrs['publisher_url'] = # not required since hosted by MET?
