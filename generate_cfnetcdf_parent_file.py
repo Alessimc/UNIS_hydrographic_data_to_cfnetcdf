@@ -11,10 +11,8 @@ current_utc_time = datetime.now(timezone.utc)
 iso_format_time = current_utc_time.strftime('%Y-%m-%dT%H:%M:%SZ')
 
 
-
 # Define the reference time
 reference_time = np.datetime64('1876-01-01')
-
 
 
 # In and out file paths 
@@ -63,14 +61,22 @@ xrds['TIME'].attrs = {'long_name': 'time',
                       'units': f'days since {reference_time}',
                       'axis': 'T'}
 
+# TODO: add the following contributors to all creator attrs:
+#   "Ragnheid Skogseth; PÃ¥l Gunnar Ellingsen; JÃ¸rgen Bergen; Finlo Cottier; Stig Falk-Petersen, Boris Ivanov, Frank Nilsen, Janne SÃ¸reide, Anna Vader"
+# TODO: change spellling to correct norwegian lettering, see if it looks ok with ncdump.
+
+# TODO: missing email and url for Borins Ivanov
+
+# correcting spelling 
+xrds.attrs['contributor_name'] = 'Ragnheid Skogseth; Pål Gunnar Ellingsen; Jørgen Berge; Finlo Cottier; Stig Falk-Petersen, Boris Ivanov, Frank Nilsen, Janne Søreide, Anna Vader'
 
 # Add missing MET ACDD metadata
 xrds.attrs['date_created'] = '2019-08-16T00:00:00Z'
 xrds.attrs['creator_type'] = 'person'
-xrds.attrs['creator_institution'] = 'University Centre in Svalbard; Norwegian Polar Institute'
-xrds.attrs['creator_name'] = 'Ragnheid Skogseth; Mathias Bockwoldt'
-xrds.attrs['creator_email'] = 'Ragnheid.Skogseth@unis.no; mathias.bockwoldt@npolar.no'
-xrds.attrs['creator_url'] = 'https://orcid.org/0000-0003-0210-4981; https://orcid.org/0000-0002-4646-9969'
+xrds.attrs['creator_institution'] = 'UNIS; NPI; UNIS; UNIS, UiT; SAMS, UiT; Akvaplan-niva, UiT; AARI, SPBU; UNIS, UiB; UNIS; UNIS;'
+xrds.attrs['creator_name'] = 'Ragnheid Skogseth; Mathias Bockwoldt; Pål Gunnar Ellingsen; Jørgen Berge; Finlo Cottier; Stig Falk-Petersen, Boris Ivanov, Frank Nilsen, Janne Søreide, Anna Vader'
+xrds.attrs['creator_email'] = 'Ragnheid.Skogseth@unis.no; mathias.bockwoldt@npolar.no; pal.g.ellingsen@uit.no; jorgen.berge@uit.no; finlo.r.cottier@uit.no;  sfp@akvaplan.niva.no; b.ivanov@spbu.ru; frank.nilsen@unis.no; janne.soreide@unis.no; anna.vader@unis.no'
+xrds.attrs['creator_url'] = 'https://orcid.org/0000-0003-0210-4981; https://orcid.org/0000-0002-4646-9969; https://orcid.org/0000-0002-3331-5581; https://orcid.org/0000-0003-0900-5679; https://orcid.org/0000-0002-3068-1754; https://tinyurl.com/4y3w8fvj; ; https://orcid.org/0000-0001-5636-2092; https://orcid.org/0000-0002-6386-2471; https://orcid.org/0000-0002-6566-4292'
 # xrds.attrs['publisher_name'] = # not required since hosted by MET?
 # xrds.attrs['publisher_email'] = # not required since hosted by MET?
 # xrds.attrs['publisher_url'] = # not required since hosted by MET?
@@ -82,7 +88,7 @@ xrds.attrs.pop('comment', None)
 
 
 # Save the modified dataset to a new NetCDF file
-print(xrds)
+# print(xrds)
 xrds.to_netcdf(out_file)
 
 with nc.Dataset(out_file, 'r+') as ds:
@@ -93,4 +99,4 @@ with nc.Dataset(out_file, 'r+') as ds:
         print("Dimension 'CALIBRATION' not found.")
 print(f'{out_file.name} succesfully saved to {out_file.parent}.')
 
-print(ds)
+# print(ds)

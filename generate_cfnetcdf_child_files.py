@@ -16,8 +16,6 @@ original_data_dir = Path('data/original_data')
 
 transformed_data_dir = Path('data/transformed_data')
 
-out_file = transformed_data_dir / 'CTD_all_1876-2019.nc'
-
 
 # List subdirectories containing child files
 subdirs = [d for d in original_data_dir.iterdir() if d.is_dir()]
@@ -34,13 +32,17 @@ for subdir in subdirs:
         # Read in file
         xrds = xr.open_dataset(nc_file)
 
+
+        # correcting spelling 
+        xrds.attrs['contributor_name'] = 'Ragnheid Skogseth; Pål Gunnar Ellingsen; Jørgen Berge; Finlo Cottier; Stig Falk-Petersen, Boris Ivanov, Frank Nilsen, Janne Søreide, Anna Vader'
+
         # Add missing MET ACDD metadata
         xrds.attrs['date_created'] = '2019-08-16T00:00:00Z'
         xrds.attrs['creator_type'] = 'person'
-        xrds.attrs['creator_institution'] = 'University Centre in Svalbard; Norwegian Polar Institute'
-        xrds.attrs['creator_name'] = 'Ragnheid Skogseth; Mathias Bockwoldt'
-        xrds.attrs['creator_email'] = 'Ragnheid.Skogseth@unis.no; mathias.bockwoldt@npolar.no'
-        xrds.attrs['creator_url'] = 'https://orcid.org/0000-0003-0210-4981; https://orcid.org/0000-0002-4646-9969'
+        xrds.attrs['creator_institution'] = 'UNIS; NPI; UNIS; UNIS, UiT; SAMS, UiT; Akvaplan-niva, UiT; AARI, SPBU; UNIS, UiB; UNIS; UNIS;'
+        xrds.attrs['creator_name'] = 'Ragnheid Skogseth; Mathias Bockwoldt; Pål Gunnar Ellingsen; Jørgen Berge; Finlo Cottier; Stig Falk-Petersen, Boris Ivanov, Frank Nilsen, Janne Søreide, Anna Vader'
+        xrds.attrs['creator_email'] = 'Ragnheid.Skogseth@unis.no; mathias.bockwoldt@npolar.no; pal.g.ellingsen@uit.no; jorgen.berge@uit.no; finlo.r.cottier@uit.no;  sfp@akvaplan.niva.no; b.ivanov@spbu.ru; frank.nilsen@unis.no; janne.soreide@unis.no; anna.vader@unis.no'
+        xrds.attrs['creator_url'] = 'https://orcid.org/0000-0003-0210-4981; https://orcid.org/0000-0002-4646-9969; https://orcid.org/0000-0002-3331-5581; https://orcid.org/0000-0003-0900-5679; https://orcid.org/0000-0002-3068-1754; https://tinyurl.com/4y3w8fvj; ; https://orcid.org/0000-0001-5636-2092; https://orcid.org/0000-0002-6386-2471; https://orcid.org/0000-0002-6566-4292'
         # xrds.attrs['publisher_name'] = # not required since hosted by MET?
         # xrds.attrs['publisher_email'] = # not required since hosted by MET?
         # xrds.attrs['publisher_url'] = # not required since hosted by MET?
